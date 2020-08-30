@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Welcome to Spring Web MVC project</title>
+<style>
+#customers {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 80%;
+}
+
+#customers td, #customers th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+	background-color: #ddd;
+}
+
+#customers th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #4CAF50;
+	color: white;
+}
+</style>
+</head>
+
+<body>
+	<h2>
+		Employee Details : Count <span th:text="${#lists.size(list)}"></span>
+	</h2>
+	<table id="customers">
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Address</th>
+		</tr>
+		<tr th:if="${list.empty}">
+			<td colspan="2">No Details Available</td>
+		</tr>
+		<tr th:each="emp : ${list}">
+			<td><span th:text="${emp.id}"></span></td>
+			<td><span th:text="${emp.name}"></span></td>
+			<td><span th:text="${emp.age}"></span></td>
+			<td><span th:text="${emp.addresses}"></span></td>
+		</tr>
+	</table>
+	<br>
+	<a href="/view/addEmp.jsp">Add Employee</a> &nbsp;&nbsp;
+	<br>
+	<br>
+	<form th:action="@{/logout}" method="post">
+		<input type="submit" value="Sign Out" />
+	</form>
+</body>
+</html>

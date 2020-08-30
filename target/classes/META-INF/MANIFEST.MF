@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: Spring Boot Demo
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Riyanshi
+Implementation-Vendor-Id: com.java.spring-boot
+Build-Jdk: 1.8.0_152
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/spring-boot-demo
+Created-By: Maven Integration for Eclipse
+
