@@ -3,11 +3,13 @@ package com.java.api;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import com.java.api.component.Student;
 
 @SuppressWarnings("unused")
 @SpringBootApplication
+@EnableScheduling
 public class StringBootApp {
 
 	public static void main(String[] args) {
